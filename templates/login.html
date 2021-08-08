@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Login</h1><br>
+<form action="{{ url_for('receive_data') }}" method="post" novalidate>
+    {{ form.csrf_token }}
+    <p>
+        {{ form.email.label }} <br> {{ form.email(size=30) }}
+        {% if form.email.errors %}
+        {% for err in form.email.errors %}
+        <span style="color:red">{{err}}</span>
+        {% endfor %}
+        {% endif %}
+    </p>
+    <p>
+        {{ form.password.label }} <br> {{ form.password(size=30) }}
+        {% if form.password.errors %}
+        {% for err in form.password.errors %}
+        <span style="color:red">{{err}}</span>
+        {% endfor %}
+        {% endif %}
+    </p>
+    {{ form.submit }}
+</form>
+</body>
+</html>
