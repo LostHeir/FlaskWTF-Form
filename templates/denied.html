@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1 style="color:red"> Access Denied!</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Denied{% endblock %}
+{% block styling %}
+body{
+    background: white;
+}
+{% endblock %}
+{% block content %}
+   <div class="container">
+      <h1 style="color:red">Access Denied</h1>
+       <iframe src="https://giphy.com/embed/iNDmrH0RBDEtBe1CRa" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+       <p><a href="https://giphy.com/gifs/nbc-what-eyebrows-iNDmrH0RBDEtBe1CRa">via GIPHY</a></p>
+   </div>
+{% endblock %}
